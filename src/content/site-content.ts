@@ -3,9 +3,15 @@ export const recruitmentUrl = "https://www.daangn.com/kr/group/%EB%B6%80%EC%82%B
 export const siteContent = {
   brand: "AutoSites",
   navigation: [
-    { title: "교육과정", items: [
+    { title: "AI 홈페이지 교육", items: [
       { label: "1일 체험", href: "/experience" },
       { label: "4주 교육과정", href: "/course" },
+      { label: "8주 실무반 안내", href: "/programs#web" },
+    ] },
+    { title: "AI 영상·기관 교육", items: [
+      { label: "AI 영상 제작 안내", href: "/programs#video" },
+      { label: "홈페이지·영상 통합 안내", href: "/programs#integrated" },
+      { label: "기업·기관 출강 문의", href: "/programs#organizations" },
     ] },
     { title: "실습 준비와 자료", items: [
       { label: "작업환경 준비", href: "/setup" },

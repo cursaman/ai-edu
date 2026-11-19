@@ -72,11 +72,16 @@ try {
   const menuStart = html.indexOf('id="main-menu"');
   const menuEnd = html.indexOf("</nav>", menuStart);
   const menu = html.slice(menuStart, menuEnd);
-  const groups = ["교육과정", "실습 준비와 자료", "AI 도구와 소개"].map((label) => menu.indexOf(`aria-label="${label}"`));
-  assert(menuStart >= 0 && menuEnd > menuStart && groups[0] >= 0 && groups[0] < groups[1] && groups[1] < groups[2], "메뉴 그룹이나 순서가 올바르지 않습니다.");
+  const groups = ["AI 홈페이지 교육", "AI 영상·기관 교육", "실습 준비와 자료", "AI 도구와 소개"].map((label) => menu.indexOf(`aria-label="${label}"`));
+  assert(menuStart >= 0 && menuEnd > menuStart && groups[0] >= 0 && groups.every((position, index) => index === 0 || position > groups[index - 1]), "메뉴 그룹이나 순서가 올바르지 않습니다.");
 
   for (const marker of ["rel=\"canonical\"", "property=\"og:image\"", "name=\"twitter:card\""]) {
     assert(html.includes(marker), `SEO 메타정보 누락: ${marker}`);
+  }
+
+  const programs = await (await fetchRequired("/programs", "text/html")).text();
+  for (const id of ["web", "video", "integrated", "organizations"]) {
+    assert(menu.includes(`href="/programs#${id}"`) && programs.includes(`id="${id}"`), `교육 안내 링크 누락: ${id}`);
   }
 
   const ids = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]));
