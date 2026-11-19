@@ -1,3 +1,4 @@
+import LearningCards from "../learning-cards";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteContent } from "@/content/site-content";
@@ -23,6 +24,7 @@ export default function AiLinksPage() {
         <nav className={styles.categoryNav} aria-label="용도별 바로가기">{categories.map((category) => <a key={category.id} href={`#${category.id}`}><span>{category.number}</span>{category.title}</a>)}</nav>
       </section>
 
+      <LearningCards title="수업에서 사용하는 도구" items={[{"title":"ChatGPT","description":"소개 문구와 만들고 싶은 화면을 정리합니다.","href":"#conversation","label":"대화·기획 도구"},{"title":"Codex","description":"요청을 코드에 적용하고 변경된 화면을 확인합니다.","href":"#building","label":"코딩·웹 제작 도구"},{"title":"GitHub·Vercel","description":"코드를 저장한 다음 실제 인터넷 주소로 공개합니다.","href":"#publishing","label":"저장·배포 도구"}]} />
       <section className={styles.startGuide} aria-labelledby="start-title"><div className={styles.container}><div><p>BEGINNER ROUTE</p><h2 id="start-title">처음이라면 이 세 개만<br />기억하세요.</h2></div><ol><li><span>01</span><p><strong>ChatGPT</strong>에서 아이디어와 계획을 정리합니다.</p></li><li><span>02</span><p><strong>Codex</strong>에서 실제 홈페이지 파일을 만듭니다.</p></li><li><span>03</span><p><strong>GitHub + Vercel</strong>로 저장하고 인터넷에 공개합니다.</p></li></ol></div></section>
 
       <div className={styles.directory}>{categories.map((category) => <section className={`${styles.category} ${styles.container}`} id={category.id} key={category.id} aria-labelledby={`${category.id}-title`}>

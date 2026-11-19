@@ -107,11 +107,11 @@ try {
   assert(sitemapXml.includes("/ai-guide"), "sitemap.xml에 AI 도구 비교 페이지가 없습니다.");
   assert(sitemapXml.includes("/ai-links"), "sitemap.xml에 AI 링크 허브 페이지가 없습니다.");
   assert(sitemapXml.includes("/education/join.html"), "sitemap.xml에 클래스 신청 경로가 없습니다.");
-  const joinResponse = await fetch(`${baseUrl}/education/join.html`, { redirect: "manual" });
-  assert([307, 308].includes(joinResponse.status), "클래스 신청 경로가 교육과정으로 연결되지 않습니다.");
+  const joinHtml = await (await fetchRequired("/education/join.html", "text/html")).text();
+  assert(joinHtml.includes("개인 수강 문의") && joinHtml.includes("기업·기관 출강 문의"), "교육 문의 유형이 없습니다.");
 
   const courseHtml = await (await fetchRequired("/course", "text/html")).text();
-  for (const copy of ["4주 뒤, 직접 만든", "당근에서 남은 자리 문의하기", "지금 할 일", "4주 과정 문의", "4주 뒤 내 손에 남는 것", "실제로 열리는 운영 URL", "채팅 요청부터 실제 배포까지", "AutoSites 운영자", "1기 4주 과정을 수료했습니다.", "100%", "MOVIEBOX", "수강생 작품 보기", "2기는 10월 10일 토요일에 시작합니다.", "2026. 10. 10–10. 31", "2기 남은 자리 문의하기", "2시간 수업표", "50,000원"]) {
+  for (const copy of ["4주 뒤, 직접 만든", "당근에서 다음 기수 문의하기", "지금 할 일", "4주 과정 문의", "4주 뒤 내 손에 남는 것", "실제로 열리는 운영 URL", "채팅 요청부터 실제 배포까지", "AutoSites 운영자", "1기 4주 과정을 수료했습니다.", "100%", "MOVIEBOX", "수강생 작품 보기", "지난 2기 일정", "2026. 10. 10–10. 31", "다음 기수 일정 문의", "2시간 수업표", "50,000원"]) {
     assert(courseHtml.includes(copy), `교육과정 필수 문구 누락: ${copy}`);
   }
   for (const id of ["progress", "records", "course-comparison", "curriculum", "next-cohort", "information", "application-flow", "recruitment"]) {

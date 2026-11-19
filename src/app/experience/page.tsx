@@ -1,3 +1,4 @@
+import LearningCards from "../learning-cards";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { recruitmentUrl, siteContent } from "@/content/site-content";
@@ -19,6 +20,7 @@ export default function ExperiencePage() {
     <SiteHeader />
     <main id="experience-main" tabIndex={-1}>
       <section className={`${styles.hero} ${styles.container}`} aria-labelledby="experience-title"><div><p className={styles.eyebrow}>{experience.eyebrow}</p><h1 id="experience-title">{experience.title}</h1><p>{experience.description}</p><div className={styles.actions}><a href={recruitmentUrl}>체험 일정 물어보기 <span>→</span></a><a href="#schedule">진행표 먼저 보기 ↓</a></div><small>{experience.note}</small></div><aside><span>오늘의 목표</span><strong>2시간 뒤,<br />내 홈페이지<br />주소 완성</strong><p>선행 지식 필요 없음<br />개인 노트북만 준비</p></aside></section>
+      <LearningCards title="체험에서 무엇을 만들까요?" items={[{"title":"소개 홈페이지","description":"이름과 소개, 사진, 연락 방법을 담은 한 페이지를 만들고 공개합니다.","href":"#schedule","label":"홈페이지 진행표"},{"title":"AI 사진 앨범","description":"사진을 변환해 표지와 이미지 설명을 넣은 모바일 앨범을 만듭니다.","href":"#album","label":"앨범 진행표"}]} />
       <section className={`${styles.section} ${styles.container}`} aria-labelledby="audience-title"><div className={styles.heading}><p className={styles.eyebrow}>WHO IT IS FOR</p><h2 id="audience-title">이런 분께 맞습니다.</h2></div><ul className={styles.audience}>{experience.audience.map((item)=><li key={item}>✓ {item}</li>)}</ul></section>
       <section id="result" className={styles.result} aria-labelledby="result-title"><div className={styles.container}><div className={styles.heading}><p className={styles.lightEyebrow}>TAKE IT HOME</p><h2 id="result-title">수업이 끝나면<br />세 가지가 남습니다.</h2></div><ol>{experience.outcomes.map((item,index)=><li key={item}><span>0{index+1}</span><strong>{item}</strong></li>)}</ol></div></section>
       <section id="schedule" className={`${styles.section} ${styles.container}`} aria-labelledby="schedule-title"><div className={styles.heading}><p className={styles.eyebrow}>120-MINUTE PLAN</p><h2 id="schedule-title">하루 2시간 체험 진행표</h2><p>설명을 길게 듣기보다 각 단계에서 바로 화면을 만들고 확인합니다.</p></div><ol className={styles.schedule}>{experience.schedule.map((item,index)=><li key={item.time}><span>{String(index+1).padStart(2,"0")}</span><time>{item.time}</time><div><h3>{item.title}</h3><p>{item.description}</p></div></li>)}</ol></section>

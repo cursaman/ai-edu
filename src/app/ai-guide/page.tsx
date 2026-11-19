@@ -1,3 +1,4 @@
+import LearningCards from "../learning-cards";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteContent } from "@/content/site-content";
@@ -23,6 +24,7 @@ export default function AiGuidePage() {
         <div className={styles.heroActions}><a href="#comparison">작업별 비교 보기</a><a href="#workflow">홈페이지 제작 순서 보기</a></div>
         <p className={styles.notice}>기능과 제공 범위는 요금제·계정·지역·관리자 설정에 따라 달라질 수 있습니다. 중요한 결과는 원문과 출처를 다시 확인하세요.</p>
       </section>
+      <LearningCards title="작업별로 고르는 AI 도구" items={[{"title":"기획하기 · ChatGPT","description":"요청 예시: 내 경력을 보여주는 소개 홈페이지의 메뉴 세 개와 첫 화면 문구를 제안해 줘."},{"title":"이미지 만들기 · Canva","description":"요청 예시: 글자가 들어갈 공간을 남긴 가로형 공방 소개 배너를 만들어 줘."},{"title":"홈페이지 수정하기 · Codex","description":"요청 예시: 모바일에서 소개 문장이 잘리지 않도록 고치고 변경한 파일을 알려줘."},{"title":"홍보영상 만들기 · CapCut","description":"요청 예시: 제품 사용법을 보여주는 30초 영상에 단계별 자막을 넣어 줘."}]} />
       <section className={`${styles.section} ${styles.container}`} id="quick-guide" aria-labelledby="quick-title">
         <div className={styles.sectionHeading}><div><p className={styles.eyebrow}>QUICK GUIDE</p><h2 id="quick-title">이름보다 역할부터<br />고르세요.</h2></div><p>세 도구 모두 질문과 글쓰기를 할 수 있지만, 연결된 환경과 최종 작업 방식에서 차이가 납니다.</p></div>
         <div className={styles.toolGrid}>{guide.tools.map((tool, index) => <article key={tool.name} className={styles.toolCard}><span>0{index + 1}</span><h3>{tool.name}</h3><strong>{tool.label}</strong><p>{tool.role}</p><ul>{tool.bestFor.map((item) => <li key={item}>{item}</li>)}</ul></article>)}</div>

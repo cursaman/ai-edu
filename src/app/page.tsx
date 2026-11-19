@@ -1,3 +1,4 @@
+import LearningCards from "./learning-cards";
 import Link from "next/link";
 import { siteContent } from "@/content/site-content";
 import styles from "./home.module.css";
@@ -27,6 +28,10 @@ export default function HomePage() {
 
       <div className={`${styles.trustBar} ${styles.container}`} aria-label="AutoSites 핵심 도구"><strong>Codex 제작</strong><span>Git 변경 기록</span><span>GitHub 저장</span><span>Vercel 운영 배포</span></div>
 
+      <LearningCards title="수강생이 만든 홈페이지" items={[{
+        ...siteContent.cohortProof.project,
+        label: "MOVIEBOX 열기",
+      }]} />
       <section id="learning-path" className={`${styles.section} ${styles.container}`} aria-labelledby="learning-path-title">
         <h2 id="learning-path-title">내게 맞는 실습 과정</h2>
         <div className={styles.learningGrid}>

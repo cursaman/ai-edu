@@ -29,7 +29,7 @@ export const siteContent = {
     description: "무엇부터 시작할지 몰라 멈췄어도 괜찮습니다. 같은 화면을 보며 하나씩 해결하고, 마지막에는 휴대폰으로 보여줄 수 있는 내 홈페이지 주소를 가져갑니다.",
     primaryAction: { label: "내가 따라갈 수 있는지 물어보기", href: recruitmentUrl },
     secondaryAction: { label: "4주 커리큘럼 보기", href: "/course#curriculum" },
-    facts: ["2기 2026. 10. 10 시작", "매주 토요일 오후 6시–8시", "4주 전체 50,000원", "부산 · 최대 8명"],
+    facts: ["다음 기수 일정 문의", "매주 토요일 오후 6시–8시", "4주 전체 50,000원", "부산 · 최대 8명"],
     achievement: "1기 4주 과정 수료 완료 · 진행률 100%",
     note: "HTML · CSS · JavaScript를 몰라도 같은 화면을 보며 따라갈 수 있습니다.",
   },
@@ -530,11 +530,11 @@ export const courseContent = {
     privacy: "결과물·후기·사진 공개 여부는 교육 참여와 별개이며, 동의하지 않아도 불이익이 없습니다.",
   },
   nextCohort: {
-    label: "2기 모집 안내",
-    title: "2기는 10월 10일 토요일에 시작합니다.",
-    description: "2026년 10월 10일, 17일, 24일, 31일에 매주 토요일 오후 6시부터 8시까지 4주 동안 진행합니다. 당근 채팅으로 남은 자리와 준비사항을 확인해 주세요.",
+    label: "지난 기수 일정",
+    title: "지난 2기 일정",
+    description: "2기 안내 일정은 2026년 10월 10일, 17일, 24일, 31일이었습니다. 다음 기수 일정과 장소는 당근 채팅으로 문의해 주세요.",
     schedule: "2026. 10. 10–10. 31 · 매주 토요일",
-    actionLabel: "2기 남은 자리 문의하기",
+    actionLabel: "다음 기수 일정 문의",
   },
   fee: { amount: "50,000원", label: "4주 전체 교육비", description: "별도의 장소 이용료 없이 4주 수업과 실습 환경이 모두 포함됩니다.", included: ["주 1회 2시간 · 총 8시간 실습", "커피긱스 2층 8인룸", "수업용 빔프로젝터", "매회 커피 제공"] },
   venue: {
@@ -545,8 +545,8 @@ export const courseContent = {
   preparation: ["개인 노트북", "노트북 충전기", "사용 가능한 이메일 계정"],
   recruitment: {
     title: "최대 8명의 소규모 실습",
-    description: "혼자 준비하다 설치와 배포에서 멈추지 않도록 최대 8명과 함께 끝까지 실습합니다. 당근 모임에서 실제 남은 자리와 참여 가능한 일정을 먼저 확인해 주세요.",
-    status: "당근에서 모집 중",
+    description: "혼자 준비하다 설치와 배포에서 멈추지 않도록 최대 8명과 함께 끝까지 실습합니다. 당근 모임에서 다음 기수 일정과 신청 가능 여부를 확인해 주세요.",
+    status: "다음 기수 문의",
     capacity: "정원 8명 · 자리 확인 후 신청 확정",
     steps: [
       { number: "01", title: "당근 모임 열기", description: "부산 사직동 바이브코딩 모임 페이지로 이동합니다." },
@@ -556,7 +556,7 @@ export const courseContent = {
     ],
     inquiryItems: ["이름 또는 당근 닉네임", "참여 가능한 수업 날짜", "개인 노트북 보유 여부", "만들고 싶은 홈페이지 주제"],
     privacy: "이 페이지에서는 이름·전화번호·이메일을 수집하거나 공개하지 않습니다. 교육 운영에 필요한 연락은 당근 채팅으로 진행합니다.",
-    action: { label: "당근에서 남은 자리 문의하기", href: recruitmentUrl },
+    action: { label: "당근에서 다음 기수 문의하기", href: recruitmentUrl },
   },
   applicationFlow: {
     eyebrow: "HOW TO JOIN",

@@ -1,3 +1,4 @@
+import LearningCards from "../learning-cards";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteContent } from "@/content/site-content";
@@ -40,6 +41,7 @@ export default function SetupPage() {
           <div className={styles.legend}><span>{setup.requiredLabel}</span><span>{setup.optionalLabel}</span></div>
         </section>
 
+      <LearningCards title="과정별 준비 체크리스트" items={[{"title":"1일 체험","description":"개인 노트북·충전기, 사용할 이메일 계정, 소개 문구나 사용 허락을 받은 사진을 준비하세요."},{"title":"4주 교육과정","description":"노트북으로 Codex 설치, GitHub 가입과 Vercel 연결을 확인하세요.","href":"#steps","label":"설치·연결 순서"},{"title":"연결이 막힐 때","description":"로그인한 계정이 올바른지, GitHub에 저장소가 보이는지, Vercel 프로젝트에서 배포 결과가 열리는지 차례로 확인하세요."}]} />
         <section id="roles" className={styles.roles} aria-labelledby="roles-title">
           <div className={styles.rolesIntro}>
             <div><p className={styles.eyebrow}>TOOLS &amp; ROLES</p><h2 id="roles-title">{setup.rolesTitle}</h2></div>

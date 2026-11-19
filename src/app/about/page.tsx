@@ -1,3 +1,4 @@
+import LearningCards from "../learning-cards";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { courseContent, recruitmentUrl, siteContent } from "@/content/site-content";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const { beginnerStory, cohortProof, audience, faq, footer } = siteContent;
-  const { fee, nextCohort } = courseContent;
+  const { fee } = courseContent;
 
   return <div className={styles.page}>
     <a className={styles.skipLink} href="#about-main">본문으로 바로가기</a>
@@ -23,13 +24,14 @@ export default function AboutPage() {
 
       <div className={`${styles.trustBar} ${styles.container}`} aria-label="클래스 검증 정보"><strong>1기 수료 완료</strong><span>진행률 100%</span><span>실제 운영 작품 공개</span><span>초보자 중심 소규모 실습</span></div>
 
+      <LearningCards title="강사 경험과 실습 방식" items={[{"title":"이종춘 강사","description":"엠투소프트에서 출력 솔루션 기술지원·유지보수·고객 교육을 담당하고 서비스지원팀을 이끌었습니다."},{"title":"내 주제로 실습","description":"내 경력이나 상품을 소재로 기획하고, 같은 화면을 보며 수정한 뒤 실제 주소로 배포합니다.","href":"/course#curriculum","label":"주차별 실습 보기"}]} />
       <section className={`${styles.section} ${styles.container}`} aria-labelledby="story-title"><SectionHeading eyebrow="처음이어도 괜찮습니다" title="막히는 지점이 정해져 있기에, 함께 넘을 수 있습니다." description={beginnerStory.description} id="story-title" /><ol className={styles.storyGrid}>{beginnerStory.chapters.map((chapter)=><li key={chapter.number}><span>{chapter.label}</span><h3>{chapter.title}</h3><p>{chapter.description}</p></li>)}</ol></section>
 
       <section className={styles.proof} aria-labelledby="proof-title"><div className={`${styles.container} ${styles.proofGrid}`}><div><p className={styles.lightEyebrow}>{cohortProof.eyebrow}</p><h2 id="proof-title">설명보다<br />완성된 결과를<br />먼저 보세요.</h2><p>{cohortProof.description}</p></div><article><span>{cohortProof.project.label}</span><h3>{cohortProof.project.title}</h3><p>{cohortProof.project.description}</p><ul>{cohortProof.facts.map((fact)=><li key={fact}>✓ {fact}</li>)}</ul><a href={cohortProof.project.href} target="_blank" rel="noreferrer">실제 작품 열어보기 <span aria-hidden="true">↗</span></a></article></div></section>
 
       <section className={`${styles.section} ${styles.container}`} aria-labelledby="audience-title"><SectionHeading eyebrow={audience.eyebrow} title="이런 분과 함께합니다." description="완벽하게 준비된 사람보다, 아이디어는 있지만 혼자 시작하기 막막했던 분을 위한 과정입니다." id="audience-title" /><div className={styles.audienceGrid}>{audience.items.map((item)=><article key={item.title}><h3>{item.title}</h3><p>{item.description}</p></article>)}</div></section>
 
-      <section className={`${styles.enrollment} ${styles.container}`} aria-labelledby="enrollment-title"><div><p className={styles.eyebrow}>2기 클래스 안내</p><h2 id="enrollment-title">결정에 필요한 정보만<br />한곳에 모았습니다.</h2><p>바로 신청하지 않아도 괜찮습니다. 현재 실력과 만들고 싶은 홈페이지를 알려주시면 참여 가능 여부부터 안내합니다.</p></div><div className={styles.enrollmentCard}><span>{nextCohort.schedule}</span><strong>{fee.amount}</strong><small>4주 전체 · 장소·빔프로젝터·커피 포함</small><ul><li>주 1회 2시간 · 총 8시간</li><li>커피긱스 2층 8인룸</li><li>개인 노트북과 충전기 준비</li></ul><a href={recruitmentUrl}>당근에서 남은 자리 물어보기 <span>→</span></a></div></section>
+      <section className={`${styles.enrollment} ${styles.container}`} aria-labelledby="enrollment-title"><div><p className={styles.eyebrow}>4주 과정 안내</p><h2 id="enrollment-title">결정에 필요한 정보만<br />한곳에 모았습니다.</h2><p>바로 신청하지 않아도 괜찮습니다. 현재 실력과 만들고 싶은 홈페이지를 알려주시면 참여 가능 여부부터 안내합니다.</p></div><div className={styles.enrollmentCard}><span>다음 기수 일정 문의</span><strong>{fee.amount}</strong><small>4주 전체 · 장소·빔프로젝터·커피 포함</small><ul><li>주 1회 2시간 · 총 8시간</li><li>커피긱스 2층 8인룸</li><li>개인 노트북과 충전기 준비</li></ul><a href={recruitmentUrl}>당근에서 다음 기수 문의하기 <span>→</span></a></div></section>
 
       <section className={`${styles.section} ${styles.container}`} aria-labelledby="faq-title"><SectionHeading eyebrow="FAQ" title="신청 전에 확인하세요." id="faq-title"/><div className={styles.faqList}>{faq.items.slice(0,4).map((item)=><details key={item.question}><summary>{item.question}<span aria-hidden="true">＋</span></summary><p>{item.answer}</p></details>)}</div></section>
 
