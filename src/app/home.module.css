@@ -33,3 +33,24 @@
   width: fit-content;
   font-weight: 750;
 }
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: clamp(520px, 47vw, 690px);
+  align-items: center;
+  padding: clamp(4rem, 8vw, 6rem) 0 5rem;
+  color: #fff;
+  background: #051225;
+}
+.heroCopy { position: relative; z-index: 1; pointer-events: none; padding-inline: clamp(10px, 4vw, 52px); }
+.heroCopy a { pointer-events: auto; }
+.hero h1 { max-width: 15ch; font-size: clamp(2.65rem, 5.7vw, 5.8rem); line-height: 1.03; }
+.hero h1 em, .hero .eyebrow { color: #a3efff; }
+.hero .lead, .hero .reassurance { color: #eef7ff; }
+.hero .lead { max-width: 43ch; }
+@media (max-width: 600px) {
+  .hero { min-height: 510px; align-items: end; padding: 4rem 0 5rem; }
+}

@@ -13,15 +13,15 @@ export default function HomePage() {
     <SiteHeader />
 
     <main id="main-content" tabIndex={-1}>
-      <section className={`${styles.hero} ${styles.container}`} aria-labelledby="hero-title">
-        <div className={styles.heroCopy}>
+      <section className={styles.hero} aria-labelledby="hero-title">
+        <HeroSwiper />
+        <div className={`${styles.heroCopy} ${styles.container}`}>
           <p className={styles.eyebrow}>CODEX → GITHUB → VERCEL</p>
           <h1 id="hero-title">아이디어를 나누면,<br /><em>홈페이지가 세상에 나옵니다.</em></h1>
           <p className={styles.lead}>AI와 함께 내 홈페이지를 만들고, GitHub에 코드를 저장하고, Vercel에서 누구나 열 수 있는 주소로 공개해 보세요.</p>
           <div className={styles.actions}><a className={styles.primaryAction} href="#learning-path">실습 과정 보기 <span>↓</span></a><Link className={styles.secondaryAction} href="/setup">작업환경 준비하기</Link></div>
           <p className={styles.reassurance}>처음이라면 1일 체험부터 시작할 수 있습니다.</p>
         </div>
-        <HeroSwiper />
       </section>
 
       <div className={`${styles.trustBar} ${styles.container}`} aria-label="AutoSites 핵심 도구"><strong>Codex 제작</strong><span>Git 변경 기록</span><span>GitHub 저장</span><span>Vercel 운영 배포</span></div>

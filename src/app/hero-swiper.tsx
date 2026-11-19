@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { A11y, Navigation, Pagination } from "swiper/modules";
+import { useState } from "react";
+import type { Swiper as SwiperInstance } from "swiper";
+import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,10 +17,30 @@ const slides = [
 ];
 
 export default function HeroSwiper() {
+  const [instance, setInstance] = useState<SwiperInstance | null>(null);
+  const [playing, setPlaying] = useState(true);
+
+  function initialize(swiper: SwiperInstance) {
+    setInstance(swiper);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      swiper.autoplay.stop();
+      setPlaying(false);
+    }
+  }
+
+  function toggleAutoplay() {
+    if (!instance) return;
+    if (playing) instance.autoplay.stop();
+    else instance.autoplay.start();
+    setPlaying(!playing);
+  }
+
   return (
     <div className={styles.gallery} role="region" aria-label="AI 홈페이지 제작 이미지">
       <Swiper
-        modules={[A11y, Navigation, Pagination]}
+        modules={[A11y, Autoplay, Navigation, Pagination]}
+        onSwiper={initialize}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         navigation
         pagination={{ clickable: true }}
         rewind
@@ -35,13 +57,16 @@ export default function HeroSwiper() {
                 src={`/images/hero/${file}.webp`}
                 alt={alt}
                 fill
-                sizes="(max-width: 860px) 94vw, 45vw"
+                sizes="100vw"
                 loading={index === 0 ? "eager" : "lazy"}
               />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+      <button className={styles.playback} type="button" onClick={toggleAutoplay} disabled={!instance}>
+        {playing ? "자동 전환 일시정지" : "자동 전환 재생"}
+      </button>
     </div>
   );
 }
