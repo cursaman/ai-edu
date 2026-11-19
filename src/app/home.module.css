@@ -9,3 +9,27 @@
 .container{width:min(calc(100% - var(--page-gutter)*2),var(--container-wide))}.header{width:min(calc(100% - var(--page-gutter)*2),var(--container-wide))}
 @media(max-width:600px){.header{width:min(calc(100% - var(--page-gutter)*2),var(--container-wide))}.trustBar{width:min(calc(100% - var(--page-gutter)*2),var(--container-wide));padding-inline:1.4rem}.enrollment,.finalCta,.deploymentSection{width:min(calc(100% - var(--page-gutter)*2),var(--container-wide))}}
 .aboutHero{text-align:left}.aboutHero h1{margin-left:0;margin-right:0}.aboutHero>p:not(.eyebrow){margin-left:0;margin-right:0}.aboutHero .actions{justify-content:flex-start}
+
+.learningGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.learningGrid article {
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid var(--site-line);
+  border-radius: var(--radius-lg);
+  background: var(--site-surface);
+}
+
+.learningGrid h3 { margin: 0; }
+.learningGrid p { color: var(--site-ink-soft); line-height: 1.7; }
+.learningGrid a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  width: fit-content;
+  font-weight: 750;
+}

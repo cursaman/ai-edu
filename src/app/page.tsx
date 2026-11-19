@@ -15,9 +15,9 @@ export default function HomePage() {
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>CODEX → GITHUB → VERCEL</p>
           <h1 id="hero-title">아이디어를 나누면,<br /><em>홈페이지가 세상에 나옵니다.</em></h1>
-          <p className={styles.lead}>AutoSites는 홈페이지 수정 요청을 실제 코드로 반영하고, 오류를 검사한 뒤 GitHub와 Vercel을 거쳐 운영 주소까지 확인하는 작업 방식입니다.</p>
-          <div className={styles.actions}><a className={styles.primaryAction} href="#workflow">제작 흐름 보기 <span>↓</span></a><Link className={styles.secondaryAction} href="/setup">작업환경 준비하기</Link></div>
-          <p className={styles.reassurance}>요청 내용 확인 · 기존 작업 보존 · 자동 검사 · 운영 배포 확인</p>
+          <p className={styles.lead}>AI와 함께 내 홈페이지를 만들고, GitHub에 코드를 저장하고, Vercel에서 누구나 열 수 있는 주소로 공개해 보세요.</p>
+          <div className={styles.actions}><a className={styles.primaryAction} href="#learning-path">실습 과정 보기 <span>↓</span></a><Link className={styles.secondaryAction} href="/setup">작업환경 준비하기</Link></div>
+          <p className={styles.reassurance}>처음이라면 1일 체험부터 시작할 수 있습니다.</p>
         </div>
         <aside className={styles.methodSummary} aria-label="AutoSites 제작 흐름">
           <span>ONE VERIFIED WORKFLOW</span>
@@ -26,6 +26,28 @@ export default function HomePage() {
       </section>
 
       <div className={`${styles.trustBar} ${styles.container}`} aria-label="AutoSites 핵심 도구"><strong>Codex 제작</strong><span>Git 변경 기록</span><span>GitHub 저장</span><span>Vercel 운영 배포</span></div>
+
+      <section id="learning-path" className={`${styles.section} ${styles.container}`} aria-labelledby="learning-path-title">
+        <h2 id="learning-path-title">내게 맞는 실습 과정</h2>
+        <div className={styles.learningGrid}>
+          <article>
+            <h3>1일 체험</h3>
+            <p>2시간 동안 소개 홈페이지나 사진 앨범을 만들고 실제 주소로 공개합니다.</p>
+            <Link href="/experience">1일 체험 보기 →</Link>
+          </article>
+          <article>
+            <h3>4주 교육과정</h3>
+            <p>내 주제로 기획하고, 화면을 수정하고, GitHub 저장과 Vercel 배포를 익힙니다.</p>
+            <Link href="/course#curriculum">4주 커리큘럼 보기 →</Link>
+          </article>
+          <article>
+            <h3>혼자 따라 하기</h3>
+            <p>작업환경을 준비하고 교재와 예제 소스로 실습할 수 있습니다.</p>
+            <Link href="/setup">작업환경 준비 →</Link>
+            <Link href="/resources">무료 실습자료 →</Link>
+          </article>
+        </div>
+      </section>
 
       <section id="workflow" className={`${styles.section} ${styles.container}`} aria-labelledby="workflow-title">
         <SectionHeading eyebrow={workflow.eyebrow} title="요청 한 문장이 운영 사이트가 되는 순서" description="파일을 바로 바꾸는 데서 끝나지 않습니다. 작업 위치와 범위를 확인하고, 구현·검사·배포를 하나의 흐름으로 진행합니다." id="workflow-title" />

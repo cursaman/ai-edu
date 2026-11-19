@@ -61,6 +61,10 @@ try {
   ];
 
   for (const copy of requiredCopy) assert(html.includes(copy), `필수 문구 누락: ${copy}`);
+  assert(html.includes('id="learning-path"'), "메인에 실습 과정 안내가 없습니다.");
+  for (const href of ["/experience", "/course#curriculum", "/setup", "/resources"]) {
+    assert(html.includes(`href="${href}"`), `실습 과정 링크 누락: ${href}`);
+  }
   assert(html.includes("준비작업"), "메인 메뉴에 준비작업 링크가 없습니다.");
   assert(html.includes('<a href="/ai-guide"><span>AI 도구 비교</span>'), "메인 메뉴에 AI 도구 비교 링크가 없습니다.");
   assert(html.includes('<a href="/ai-links"><span>AI 링크 허브</span>'), "메인 메뉴에 AI 링크 허브가 없습니다.");
