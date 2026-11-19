@@ -7,7 +7,7 @@ import CourseSelector from "./course-selector";
 export default function SiteHeader() {
   return <header className="siteHeader" data-site-header>
     <Link className="siteHeaderBrand" href="/" aria-label="AutoSites 홈으로 이동"><Image src={autoSitesLogo} alt="" width={40} height={40} priority /><span>AutoSites</span></Link>
-    <CourseSelector items={siteContent.navigation} />
-    <a className="siteHeaderAction" href={recruitmentUrl}>클래스 문의</a>
+    <CourseSelector groups={siteContent.navigation} />
+    <a className="siteHeaderAction" href={recruitmentUrl}>교육 문의</a>
   </header>;
 }

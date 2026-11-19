@@ -65,12 +65,15 @@ try {
   for (const href of ["/experience", "/course#curriculum", "/setup", "/resources"]) {
     assert(html.includes(`href="${href}"`), `실습 과정 링크 누락: ${href}`);
   }
-  assert(html.includes("준비작업"), "메인 메뉴에 준비작업 링크가 없습니다.");
+  assert(html.includes('<a href="/setup"><span>작업환경 준비</span>'), "메인 메뉴에 작업환경 준비 링크가 없습니다.");
   assert(html.includes('<a href="/ai-guide"><span>AI 도구 비교</span>'), "메인 메뉴에 AI 도구 비교 링크가 없습니다.");
   assert(html.includes('<a href="/ai-links"><span>AI 링크 허브</span>'), "메인 메뉴에 AI 링크 허브가 없습니다.");
-  assert(html.includes('<a href="/course"><span>4주 교육과정</span>'), "상단 메뉴의 4주 교육과정이 페이지 상단으로 연결되지 않습니다.");
-  assert(html.indexOf("1일 체험") < html.indexOf("준비작업"), "준비작업 메뉴가 1일 체험 다음에 있지 않습니다.");
-  assert(html.indexOf("1일 체험") < html.indexOf("AutoSites 소개"), "1일 체험 메뉴가 AutoSites 소개 앞에 있지 않습니다.");
+  assert(html.includes('<a href="/course"><span>4주 교육과정</span>'), "4주 교육과정 메뉴가 없습니다.");
+  const menuStart = html.indexOf('id="main-menu"');
+  const menuEnd = html.indexOf("</nav>", menuStart);
+  const menu = html.slice(menuStart, menuEnd);
+  const groups = ["교육과정", "실습 준비와 자료", "AI 도구와 소개"].map((label) => menu.indexOf(`aria-label="${label}"`));
+  assert(menuStart >= 0 && menuEnd > menuStart && groups[0] >= 0 && groups[0] < groups[1] && groups[1] < groups[2], "메뉴 그룹이나 순서가 올바르지 않습니다.");
 
   for (const marker of ["rel=\"canonical\"", "property=\"og:image\"", "name=\"twitter:card\""]) {
     assert(html.includes(marker), `SEO 메타정보 누락: ${marker}`);
@@ -189,7 +192,7 @@ try {
     assert(pageHtml.includes('aria-controls="main-menu"'), `${page} 드롭다운 접근성 연결이 없습니다.`);
     assert(pageHtml.includes("data-site-header"), `${page} 상단 메뉴 고정 표식이 없습니다.`);
     assert(pageHtml.includes('class="siteHeader"'), `${page} 공통 상단 메뉴 컴포넌트가 없습니다.`);
-    assert(pageHtml.includes("클래스 문의"), `${page} 상단 메뉴 문의 버튼 문구가 다릅니다.`);
+    assert(pageHtml.includes("교육 문의"), `${page} 상단 메뉴 문의 버튼 문구가 다릅니다.`);
   }
   for (const [page, pageHtml] of [["AutoSites 소개", aboutHtml], ["교육과정", courseHtml], ["2시간 체험", experienceHtml], ["작업환경", setupHtml], ["무료 자료실", resourcesHtml], ["AI 도구 비교", aiGuideHtml], ["AI 링크 허브", aiLinksHtml]]) {
     for (const marker of ["rel=\"canonical\"", "property=\"og:title\"", "property=\"og:description\"", "name=\"twitter:title\""]) {

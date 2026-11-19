@@ -6,7 +6,9 @@ import styles from "./course-selector.module.css";
 
 type NavigationItem = { readonly label: string; readonly href: string };
 
-export default function CourseSelector({ items }: { items: readonly NavigationItem[] }) {
+type NavigationGroup = { readonly title: string; readonly items: readonly NavigationItem[] };
+
+export default function CourseSelector({ groups }: { groups: readonly NavigationGroup[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -18,7 +20,7 @@ export default function CourseSelector({ items }: { items: readonly NavigationIt
     }
 
     function closeFromEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && isOpen) {
         setIsOpen(false);
         buttonRef.current?.focus();
       }
@@ -30,14 +32,22 @@ export default function CourseSelector({ items }: { items: readonly NavigationIt
       document.removeEventListener("pointerdown", closeFromOutside);
       document.removeEventListener("keydown", closeFromEscape);
     };
-  }, []);
+  }, [isOpen]);
 
   return (
     <nav className={styles.navigation} aria-label="주요 메뉴" ref={menuRef}>
-      <button ref={buttonRef} className={styles.menuButton} type="button" aria-expanded={isOpen} aria-controls="main-menu" aria-haspopup="true" onClick={() => setIsOpen((current) => !current)}><span>전체 메뉴</span><i aria-hidden="true" /></button>
+      <button ref={buttonRef} className={styles.menuButton} type="button" aria-expanded={isOpen} aria-controls="main-menu" onClick={() => setIsOpen((current) => !current)}><span>전체 메뉴</span><i aria-hidden="true" /></button>
       <div id="main-menu" className={styles.links} data-open={isOpen}>
-        <p>원하는 페이지를 선택하세요.</p>
-        {items.map((item) => <a key={item.href} href={item.href} aria-current={item.href.startsWith("/") && pathname === item.href.split("#")[0] ? "page" : undefined} onClick={() => setIsOpen(false)}><span>{item.label}</span><b aria-hidden="true">→</b></a>)}
+        {groups.map(({ title, items }) => (
+          <div key={title} role="group" aria-label={title} className={styles.group}>
+            <p>{title}</p>
+            {items.map(({ href, label }) => (
+              <a key={href} href={href} aria-current={pathname === href ? "page" : undefined} onClick={() => setIsOpen(false)}>
+                <span>{label}</span><b aria-hidden="true">→</b>
+              </a>
+            ))}
+          </div>
+        ))}
       </div>
     </nav>
   );

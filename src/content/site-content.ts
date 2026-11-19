@@ -3,14 +3,19 @@ export const recruitmentUrl = "https://www.daangn.com/kr/group/%EB%B6%80%EC%82%B
 export const siteContent = {
   brand: "AutoSites",
   navigation: [
-    { label: "1일 체험", href: "/experience" },
-    { label: "준비작업", href: "/setup" },
-    { label: "AI 도구 비교", href: "/ai-guide" },
-    { label: "AI 링크 허브", href: "/ai-links" },
-    { label: "AutoSites 소개", href: "/about" },
-    { label: "4주 교육과정", href: "/course" },
-    { label: "무료 자료", href: "/resources" },
-    { label: "신청 문의", href: recruitmentUrl },
+    { title: "교육과정", items: [
+      { label: "1일 체험", href: "/experience" },
+      { label: "4주 교육과정", href: "/course" },
+    ] },
+    { title: "실습 준비와 자료", items: [
+      { label: "작업환경 준비", href: "/setup" },
+      { label: "무료 실습자료", href: "/resources" },
+    ] },
+    { title: "AI 도구와 소개", items: [
+      { label: "AI 도구 비교", href: "/ai-guide" },
+      { label: "AI 링크 허브", href: "/ai-links" },
+      { label: "AutoSites 소개", href: "/about" },
+    ] },
   ],
   hero: {
     eyebrow: "BUSAN · BEGINNER 4-WEEK CLASS",
