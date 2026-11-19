@@ -1,3 +1,4 @@
+import HeroSwiper from "./hero-swiper";
 import LearningCards from "./learning-cards";
 import Link from "next/link";
 import { siteContent } from "@/content/site-content";
@@ -20,10 +21,7 @@ export default function HomePage() {
           <div className={styles.actions}><a className={styles.primaryAction} href="#learning-path">실습 과정 보기 <span>↓</span></a><Link className={styles.secondaryAction} href="/setup">작업환경 준비하기</Link></div>
           <p className={styles.reassurance}>처음이라면 1일 체험부터 시작할 수 있습니다.</p>
         </div>
-        <aside className={styles.methodSummary} aria-label="AutoSites 제작 흐름">
-          <span>ONE VERIFIED WORKFLOW</span>
-          <ol>{workflow.steps.map((step)=><li key={step.number}><small>{step.number}</small><strong>{step.title}</strong></li>)}</ol>
-        </aside>
+        <HeroSwiper />
       </section>
 
       <div className={`${styles.trustBar} ${styles.container}`} aria-label="AutoSites 핵심 도구"><strong>Codex 제작</strong><span>Git 변경 기록</span><span>GitHub 저장</span><span>Vercel 운영 배포</span></div>
