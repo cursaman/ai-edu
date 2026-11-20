@@ -17,6 +17,9 @@ const slides = [
   { file: "travel-workshop", alt: "여행 홈페이지를 만드는 수강생" },
   { file: "responsive-portfolio", alt: "모니터와 태블릿, 스마트폰에 표시된 반응형 포트폴리오" },
   { file: "wireframe-to-website", alt: "와이어프레임에서 완성된 웹 화면으로 바뀌는 모습" },
+  { file: "botanical-workshop", alt: "식물 가게 홈페이지를 함께 만드는 두 수강생" },
+  { file: "cloud-deployment", alt: "클라우드와 연결된 투명한 웹페이지" },
+  { file: "mobile-cafe", alt: "스마트폰에 표시된 카페 홈페이지" },
 ];
 
 export default function HeroSwiper() {
