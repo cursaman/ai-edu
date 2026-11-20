@@ -29,22 +29,28 @@ body{background:radial-gradient(circle at 8% 0%,rgba(217,249,157,.28),transparen
   --accent: var(--site-accent);
   --accent-foreground: var(--site-accent-ink);
   --site-bg: var(--site-canvas);
-  --education-wash: radial-gradient(ellipse at 92% 16%, #82cee870, transparent 52%),
-    radial-gradient(ellipse at 72% 116%, #488bcc38, transparent 62%),
-    linear-gradient(126deg, #f8fcfe, #e4eef5);
-  --education-dark: radial-gradient(ellipse at 78% -30%, #087aa8 0%, transparent 59%),
-    linear-gradient(134deg, #102e53, #071525 78%);
+  --education-wash: radial-gradient(ellipse at 92% 8%, #ffc49199, transparent 52%),
+    linear-gradient(125deg, #fffdf9, #f5e5d7);
+  --education-dark: radial-gradient(ellipse at 88% 115%, #90320e 0%, transparent 58%),
+    linear-gradient(140deg, #282019, #141210 73%);
 }
 body { background: var(--site-canvas); }
 [data-site-header] {
-  color: var(--site-ink);
-  background: #f9fcfdf2 !important;
-  border-color: #cedde8 !important;
-  box-shadow: 0 8px 30px #15384c12 !important;
+  color: #fff6ed;
+  background: #1d1713f5 !important;
+  border-color: #513629 !important;
+  box-shadow: 0 8px 30px #31150730 !important;
 }
-.siteHeaderAction { background: #0c365c; }
+.siteHeaderBrand { color: #fff6ed; }
+.siteHeaderAction { background: #ffb581; color: #351407; }
+.siteHeaderAction:hover { background: #ffd1b0; color: #351407; }
 div:has(> [data-site-header]) > footer {
   background: var(--site-code);
-  color: #eaf5fc;
+  color: #fff5ec;
 }
-div:has(> [data-site-header]) > footer :is(a, span, small) { color: #d0e5f5; }
+div:has(> [data-site-header]) > footer :is(a, span, small) { color: #ead4c5; }
+
+div:has(> [data-site-header]) > footer {
+  border-top: 1px solid #593321;
+  background: var(--education-dark);
+}

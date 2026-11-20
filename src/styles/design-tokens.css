@@ -1,17 +1,17 @@
 :root {
   /* Color */
-  --site-canvas: #f3f4f2;
+  --site-canvas: #faf8f5;
   --site-surface: #ffffff;
-  --site-surface-strong: #e7f1f6;
-  --site-ink: #102339;
-  --site-ink-soft: #46576a;
-  --site-line: #d4e0e8;
-  --site-accent: #075d93;
-  --site-accent-hover: #064674;
-  --site-accent-ink: #f4fbff;
-  --site-highlight: #a8edff;
-  --site-code: #081929;
-  --site-code-ink: #e4f4fd;
+  --site-surface-strong: #f6e9de;
+  --site-ink: #231913;
+  --site-ink-soft: #5f5148;
+  --site-line: #e7d9cf;
+  --site-accent: #a53910;
+  --site-accent-hover: #802807;
+  --site-accent-ink: #fff8f1;
+  --site-highlight: #ffb581;
+  --site-code: #171310;
+  --site-code-ink: #f8eade;
   --site-danger: #9b312c;
 
   /* Typography */
@@ -57,8 +57,8 @@
   --radius-md: 22px;
   --radius-lg: 34px;
   --radius-pill: 999px;
-  --shadow-card: 0 24px 70px rgba(12, 48, 79, 0.10), 0 2px 8px rgba(20, 32, 25, 0.04);
-  --shadow-focus: 0 0 0 4px rgba(13, 115, 174, 0.22);
+  --shadow-card: 0 24px 70px rgba(58, 30, 17, 0.10), 0 2px 8px rgba(20, 32, 25, 0.04);
+  --shadow-focus: 0 0 0 4px rgba(183, 67, 16, 0.24);
 
   /* Motion */
   --duration-fast: 160ms;

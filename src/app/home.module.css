@@ -43,13 +43,13 @@
   align-items: center;
   padding: clamp(4rem, 8vw, 6rem) 0 5rem;
   color: #fff;
-  background: #051225;
+  background: #1a100d;
 }
 .heroCopy { position: relative; z-index: 1; pointer-events: none; padding-inline: clamp(10px, 4vw, 52px); }
 .heroCopy a { pointer-events: auto; }
 .hero h1 { max-width: 15ch; font-size: clamp(2.65rem, 5.7vw, 5.8rem); line-height: 1.03; }
-.hero h1 em, .hero .eyebrow { color: #a3efff; }
-.hero .lead, .hero .reassurance { color: #eef7ff; }
+.hero h1 em, .hero .eyebrow { color: #ffc293; }
+.hero .lead, .hero .reassurance { color: #fff4eb; }
 .hero .lead { max-width: 43ch; }
 @media (max-width: 600px) {
   .hero { min-height: 510px; align-items: end; padding: 4rem 0 5rem; }
@@ -63,23 +63,23 @@
   overflow: hidden;
 }
 .heroCopy { padding-inline: clamp(.25rem, 3vw, 2rem); }
-.hero .primaryAction { background: #cef6ff; color: #08304a; }
-.hero .secondaryAction { background: #081e36b8; color: #fff; border-color: #c9ecff80; }
+.hero .primaryAction { background: #ffb581; color: #351407; }
+.hero .secondaryAction { background: #291611cf; color: #fff; border-color: #ffd9be80; }
 .trustBar {
   position: relative;
   z-index: 2;
   margin-top: -1rem;
   margin-bottom: clamp(2rem, 5vw, 4rem);
-  border: 1px solid #c6dce9;
+  border: 1px solid #604034;
   border-radius: var(--radius-pill);
-  background: #f6fcff;
-  box-shadow: 0 12px 35px #173e6418;
+  background: #211914;
+  box-shadow: 0 12px 35px #46200d26;
 }
 .learningGrid article {
   position: relative;
   border-radius: var(--radius-md);
-  background: linear-gradient(145deg, #fff 60%, #e8f5fb);
-  box-shadow: 0 14px 32px #15384c0b;
+  background: linear-gradient(145deg, #fff 60%, #fce9dc);
+  box-shadow: 0 14px 32px #482c160d;
 }
 .learningGrid a { color: var(--site-accent); }
 .toolSection { background: var(--education-wash); }
@@ -94,4 +94,30 @@
 @media (max-width: 600px) {
   .hero { min-height: 510px; }
   .trustBar { margin-top: .75rem; border-radius: 1rem; }
+}
+
+.hero {
+  min-height: clamp(520px, 50vw, 740px);
+  border-radius: 0 0 2rem 2rem;
+}
+.hero .eyebrow { letter-spacing: .19em; }
+.trustBar { color: #f5e4d9; }
+.trustBar strong { color: var(--site-highlight); }
+.toolSection {
+  background: var(--education-dark);
+  color: #fff5ec;
+}
+.toolSection .sectionHeading :is(p, h2) { color: #fff5ec; }
+.toolGrid li {
+  background: #2a211b;
+  border-color: #634433;
+  color: #fff5ec;
+}
+.toolGrid li :is(p, strong) { color: #ead4c5; }
+.toolGrid li > span { color: #ffb581; }
+.learningGrid article { border-top: 3px solid #ee905d; }
+.finalCta {
+  background:
+    radial-gradient(ellipse 85% 72% at 52% 130%, #ffc077, #b64017 55%, transparent 76%),
+    #211610;
 }

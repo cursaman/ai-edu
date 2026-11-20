@@ -3,9 +3,9 @@
   inset: 0;
   min-width: 0;
   overflow: hidden;
-  background: #051225;
+  background: #1a100d;
   --swiper-navigation-color: #fff;
-  --swiper-pagination-color: #7de6ff;
+  --swiper-pagination-color: #ffb581;
   --swiper-pagination-bullet-inactive-color: #fff;
   --swiper-pagination-bullet-inactive-opacity: .65;
 }
@@ -25,7 +25,7 @@
   width: 44px;
   height: 44px;
   border-radius: 100%;
-  background: #051225d9;
+  background: #1a100dd9;
 }
 
 .gallery :global(.swiper-button-prev) svg,
@@ -46,7 +46,7 @@
 .gallery :global(.swiper-button-prev):focus-visible,
 .gallery :global(.swiper-button-next):focus-visible,
 .gallery :global(.swiper-pagination-bullet):focus-visible {
-  outline: 2px solid #7de6ff;
+  outline: 2px solid #ffb581;
   outline-offset: 3px;
 }
 
@@ -83,7 +83,7 @@
   padding: 0 .65rem;
   border: 1px solid #a3efff66;
   border-radius: 10px;
-  background: #051225e6;
+  background: #1a100de6;
   color: #fff;
   cursor: pointer;
 }
@@ -100,11 +100,17 @@
 
 .frame::after {
   background:
-    radial-gradient(ellipse at 5% -35%, #18a4ce73, transparent 52%),
-    linear-gradient(90deg, #06182fef 0%, #09243fdf 29%, #123e5d70 58%, #0b37550d 92%);
+    radial-gradient(ellipse 95% 40% at 45% -12%, #ffb263d9 0%, #f26828a8 43%, transparent 72%),
+    radial-gradient(ellipse 80% 42% at 76% 120%, #d84d218c 0%, transparent 74%),
+    linear-gradient(90deg, #180e0bf7 0%, #21110ddd 34%, #40221940 76%);
 }
 @media (max-width: 600px) {
   .frame::after {
-    background: linear-gradient(0deg, #06182ff7 0%, #06182fe9 35%, #123e5d60 78%, #22a3cc26 100%);
+    background:
+      radial-gradient(ellipse 85% 38% at 40% -7%, #ff792da8, transparent 70%),
+      linear-gradient(0deg, #180e0bfa 0%, #21100de0 35%, #42241b1c 82%);
+  }
+  .gallery :global(.swiper-pagination-bullets) {
+    max-width: 105px;
   }
 }
