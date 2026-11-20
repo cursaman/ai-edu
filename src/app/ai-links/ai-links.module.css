@@ -11,3 +11,13 @@
 .categoryNav{grid-template-columns:repeat(3,1fr)}
 @media(max-width:900px){.header{grid-template-columns:1fr auto auto;gap:.6rem}.categoryNav{grid-template-columns:repeat(2,1fr)}.startGuide>div,.caution{grid-template-columns:1fr;gap:2.5rem}.toolGrid{grid-template-columns:1fr}.toolGrid article{min-height:240px}.footer>div,.footer p{flex-direction:column}.footer nav{flex-wrap:wrap}}
 @media(max-width:600px){.headerAction{display:none}.hero h1{font-size:clamp(3rem,15vw,4.5rem)}.categoryNav{grid-template-columns:1fr}.categoryHeading{grid-template-columns:2.5rem 1fr}.category{padding:4.5rem 0}.footer p span{font-size:.86rem}}
+
+
+.hero {
+  background: var(--education-wash);
+  border: 1px solid var(--site-line);
+  box-shadow: var(--shadow-card);
+  margin-top: clamp(1rem, 3vw, 2rem);
+  padding: clamp(2rem, 7vw, 5rem) clamp(1rem, 5vw, 4rem);
+  border-radius: var(--radius-lg);
+}

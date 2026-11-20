@@ -54,3 +54,44 @@
 @media (max-width: 600px) {
   .hero { min-height: 510px; align-items: end; padding: 4rem 0 5rem; }
 }
+
+/* Homepage and introduction */
+.hero {
+  margin-top: clamp(.4rem, 1vw, 1rem);
+  min-height: clamp(500px, 48vw, 690px);
+  border-radius: 0 0 clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3.5rem);
+  overflow: hidden;
+}
+.heroCopy { padding-inline: clamp(.25rem, 3vw, 2rem); }
+.hero .primaryAction { background: #cef6ff; color: #08304a; }
+.hero .secondaryAction { background: #081e36b8; color: #fff; border-color: #c9ecff80; }
+.trustBar {
+  position: relative;
+  z-index: 2;
+  margin-top: -1rem;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+  border: 1px solid #c6dce9;
+  border-radius: var(--radius-pill);
+  background: #f6fcff;
+  box-shadow: 0 12px 35px #173e6418;
+}
+.learningGrid article {
+  position: relative;
+  border-radius: var(--radius-md);
+  background: linear-gradient(145deg, #fff 60%, #e8f5fb);
+  box-shadow: 0 14px 32px #15384c0b;
+}
+.learningGrid a { color: var(--site-accent); }
+.toolSection { background: var(--education-wash); }
+.deploymentSection, .finalCta { background: var(--education-dark); }
+.finalCta { margin-bottom: clamp(2rem, 5vw, 4rem); }
+.aboutHero {
+  padding: clamp(3rem, 9vw, 7rem) clamp(1.25rem, 6vw, 5rem);
+  margin-top: 1.25rem;
+  border-radius: var(--radius-lg);
+  background: var(--education-wash);
+}
+@media (max-width: 600px) {
+  .hero { min-height: 510px; }
+  .trustBar { margin-top: .75rem; border-radius: 1rem; }
+}

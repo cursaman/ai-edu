@@ -10,3 +10,13 @@
 .container{width:min(calc(100% - var(--page-gutter)*2),var(--container-wide))}.header{width:min(calc(100% - var(--page-gutter)*2),var(--container-wide))}
 @media(max-width:520px){.nextStep,.codexPrompts{width:min(calc(100% - var(--page-gutter)*2),var(--container-wide))}}
 @media(max-width:600px){.header{gap:.7rem}.brand{font-size:0}.headerAction{display:none}}
+
+
+.hero {
+  background: var(--education-wash);
+  border: 1px solid var(--site-line);
+  box-shadow: var(--shadow-card);
+  margin-top: clamp(1rem, 3vw, 2rem);
+  padding: clamp(2rem, 7vw, 5rem) clamp(1rem, 5vw, 4rem);
+  border-radius: var(--radius-lg);
+}

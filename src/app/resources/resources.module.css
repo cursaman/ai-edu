@@ -5,3 +5,11 @@
 @media(max-width:600px){.header{gap:.7rem}.brand{font-size:0}.headerAction{display:none}}
 .sources{padding-bottom:clamp(6rem,10vw,9rem)}
 .references{padding-bottom:var(--section-space)}.references ol{margin:var(--space-12) 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;list-style:none}.references li{padding:1.5rem;display:grid;grid-template-columns:3rem 1fr;gap:1rem;border:1px solid var(--site-line);border-radius:20px;background:#fff}.references li>span{color:var(--site-accent);font:800 .72rem var(--font-mono)}.references h3{margin:0 0 .5rem;font-size:1.15rem}.references li p{margin:0;color:var(--site-ink-soft);line-height:1.65}.referenceAction{margin-top:1.2rem;padding:1rem 1.2rem;display:flex;justify-content:space-between;border-radius:16px;background:var(--site-accent);color:#fff;font-weight:850;text-decoration:none}@media(max-width:800px){.references ol{grid-template-columns:1fr}}
+
+.page { background: var(--site-canvas); }
+.hero {
+  background: var(--education-wash);
+  border: 1px solid var(--site-line);
+  box-shadow: var(--shadow-card);
+  
+}

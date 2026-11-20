@@ -97,3 +97,14 @@
     left: 64px;
   }
 }
+
+.frame::after {
+  background:
+    radial-gradient(ellipse at 5% -35%, #18a4ce73, transparent 52%),
+    linear-gradient(90deg, #06182fef 0%, #09243fdf 29%, #123e5d70 58%, #0b37550d 92%);
+}
+@media (max-width: 600px) {
+  .frame::after {
+    background: linear-gradient(0deg, #06182ff7 0%, #06182fe9 35%, #123e5d60 78%, #22a3cc26 100%);
+  }
+}

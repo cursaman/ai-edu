@@ -23,3 +23,13 @@
 .footer{border-top:1px solid var(--site-line);padding:2rem 0}.footer>div{display:flex;align-items:center;justify-content:space-between;gap:2rem}.footer p{display:flex;gap:1rem}.footer p span{color:var(--site-ink-soft)}.footer nav{display:flex;gap:1.2rem;font-size:.86rem;font-weight:700}
 @media(max-width:900px){.header{grid-template-columns:1fr auto auto;gap:.6rem}.sectionHeading,.darkHeading,.workflow,.sources{grid-template-columns:1fr}.toolGrid,.roleGrid{grid-template-columns:1fr}.choiceGrid{grid-template-columns:repeat(2,1fr)}.footer>div,.footer p{align-items:flex-start;flex-direction:column}.footer nav{flex-wrap:wrap}}
 @media(max-width:600px){.headerAction{display:none}.hero h1{font-size:clamp(3rem,16vw,4.6rem)}.section{padding:4.5rem 0}.sectionHeading,.darkHeading{gap:1.2rem;margin-bottom:2rem}.choiceGrid{grid-template-columns:1fr}.workflow{width:calc(100% - var(--page-gutter)*2);border-radius:24px;padding:1.5rem}.sources{gap:2rem}.footer p span{font-size:.86rem}}
+
+
+.hero {
+  background: var(--education-wash);
+  border: 1px solid var(--site-line);
+  box-shadow: var(--shadow-card);
+  margin-top: clamp(1rem, 3vw, 2rem);
+  padding: clamp(2rem, 7vw, 5rem) clamp(1rem, 5vw, 4rem);
+  border-radius: var(--radius-lg);
+}
