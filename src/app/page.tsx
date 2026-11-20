@@ -47,7 +47,7 @@ export default function HomePage() {
             <h3>혼자 따라 하기</h3>
             <p>작업환경을 준비하고 교재와 예제 소스로 실습할 수 있습니다.</p>
             <Link href="/setup">작업환경 준비 →</Link>
-            <Link href="/resources">무료 실습자료 →</Link>
+            <Link href="/resources#online-practice">단계별 온라인 실습 →</Link>
           </article>
         </div>
       </section>
