@@ -14,6 +14,9 @@ const slides = [
   { file: "website-build", alt: "노트북에서 펼쳐지는 홀로그램 홈페이지" },
   { file: "ai-collaboration", alt: "사람과 로봇의 손이 함께 만드는 홈페이지" },
   { file: "website-launch", alt: "홈페이지가 홀로그램 지구와 연결되는 모습" },
+  { file: "travel-workshop", alt: "여행 홈페이지를 만드는 수강생" },
+  { file: "responsive-portfolio", alt: "모니터와 태블릿, 스마트폰에 표시된 반응형 포트폴리오" },
+  { file: "wireframe-to-website", alt: "와이어프레임에서 완성된 웹 화면으로 바뀌는 모습" },
 ];
 
 export default function HeroSwiper() {
